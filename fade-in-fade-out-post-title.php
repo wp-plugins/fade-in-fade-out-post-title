@@ -4,7 +4,7 @@
 Plugin Name: Fade in fade out post title
 Description: Fade in fade out post title, It is an excellent way to transition between two messages.
 Author: Gopi.R
-Version: 8.0
+Version: 8.1
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
@@ -37,66 +37,8 @@ require_once("language/english.php");
 function fifo()
 {
 	global $wpdb;
-	
-	$fifopost_fadeout = get_option('fifopost_fadeout');
-	$fifopost_fadein = get_option('fifopost_fadein');
-	$fifopost_fade = get_option('fifopost_fade');
-	$fifopost_fadestep = get_option('fifopost_fadestep');
-	$fifopost_fadewait = get_option('fifopost_fadewait');
-	$fifopost_bfadeoutt = get_option('fifopost_bfadeoutt');
-	
-	$fifopost_noofpost = get_option('fifopost_noofpost');
-	$fifopost_categories = get_option('fifopost_categories');
-	$fifopost_orderbys = get_option('fifopost_orderbys');
-	$fifopost_order = get_option('fifopost_order');
-	$fifopost_prefix = get_option('fifopost_prefix');
-		
-	if(!is_numeric($fifopost_fadeout)){ $fifopost_fadeout = 255; } 
-	if(!is_numeric($fifopost_fadein)){ $fifopost_fadein = 0; } 
-	if(!is_numeric($fifopost_fade)){ $fifopost_fade = 0; } 
-	if(!is_numeric($fifopost_fadestep)){ $fifopost_fadestep = 3; } 
-	if(!is_numeric($fifopost_fadewait)){ $fifopost_fadewait = 3000; } 
-	
-	if(!is_numeric($fifopost_noofpost)){ $fifopost_noofpost = 10; } 
-	
-	$sSql = query_posts('cat='.$fifopost_categories.'&orderby='.$fifopost_orderbys.'&order='.$fifopost_order.'&showposts='.$fifopost_noofpost);
-	
-	$fifopost_arr = "";
-	if ( ! empty($sSql) ) 
-	{
-		$count = 0;
-		foreach ( $sSql as $sSql ) 
-		{
-			@$title = $sSql->post_title;
-			@$link = get_permalink($sSql->ID);
-			$fifopost_arr = $fifopost_arr . "fifopost_Links[$count] = '$link';fifopost_Titles[$count] = '$title'; ";
-			if($count == 0)
-			{
-				@$first_t = $title;
-				@$first_l = $link;
-			}
-			$count = $count + 1;
-		}
-	}
-	wp_reset_query();
-	?>
-	<script type="text/javascript" language="javascript">
-	function fifopost_SetFadeLinks() 
-	{
-		<?php echo $fifopost_arr ?>
-	}
-	var fifopost_FadeOut = <?php echo $fifopost_fadeout; ?>;
-	var fifopost_FadeIn = <?php echo $fifopost_fadein; ?>;
-	var fifopost_Fade = <?php echo $fifopost_fade; ?>;
-	var fifopost_FadeStep = <?php echo $fifopost_fadestep; ?>;
-	var fifopost_FadeWait = <?php echo $fifopost_fadewait; ?>;
-	var fifopost_bFadeOutt = <?php echo $fifopost_bfadeoutt; ?>;
-	</script>
-    <div id="gopiplus_css" style="padding:5px;"><?php echo $fifopost_prefix; ?><a href="<?php echo $first_l; ?>" id="fifopost_Link"><?php echo $first_t; ?></a></div>
-	<?php
+	echo fifopost_shortcode('');
 }
-
-add_shortcode( 'FADEIN_FADEOUT', 'fifopost_shortcode' );
 
 function fifopost_shortcode( $atts ) 
 {
@@ -123,51 +65,9 @@ function fifopost_shortcode( $atts )
 	if(!is_numeric($fifopost_fade)){ $fifopost_fade = 0; } 
 	if(!is_numeric($fifopost_fadestep)){ $fifopost_fadestep = 3; } 
 	if(!is_numeric($fifopost_fadewait)){ $fifopost_fadewait = 3000; } 
-	
 	if(!is_numeric($fifopost_noofpost)){ $fifopost_noofpost = 10; } 
 	
-	//$sSql = query_posts('cat='.$fifopost_categories.'&orderby='.$fifopost_orderbys.'&order='.$fifopost_order.'&showposts='.$fifopost_noofpost);
-	
-	$sSqlMin = "select p.ID, p.post_title, wpr.object_id, ". $wpdb->prefix . "terms.name , ". $wpdb->prefix . "terms.term_id ";
-	$sSqlMin = $sSqlMin . "from ". $wpdb->prefix . "terms ";
-	$sSqlMin = $sSqlMin . "inner join ". $wpdb->prefix . "term_taxonomy on ". $wpdb->prefix . "terms.term_id = ". $wpdb->prefix . "term_taxonomy.term_id ";
-	$sSqlMin = $sSqlMin . "inner join ". $wpdb->prefix . "term_relationships wpr on wpr.term_taxonomy_id = ". $wpdb->prefix . "term_taxonomy.term_taxonomy_id ";
-	$sSqlMin = $sSqlMin . "inner join ". $wpdb->prefix . "posts p on p.ID = wpr.object_id ";
-	$sSqlMin = $sSqlMin . "where taxonomy= 'category' and p.post_type = 'post' and p.post_status = 'publish'";
-	//$sSqlMin = $sSqlMin . "order by object_id; ";
-	
-	if( ! empty($fifopost_categories) )
-	{
-		$sSqlMin = $sSqlMin . " and ". $wpdb->prefix . "terms.term_id in($fifopost_categories)";
-	}
-	
-	if( ! empty($fifopost_orderbys) )
-	{
-		
-		if($fifopost_orderbys <> "rand" )
-		{
-			$sSqlMin = $sSqlMin . " order by p.$fifopost_orderbys";
-			
-			if( ! empty($fifopost_order) )
-			{
-				$sSqlMin = $sSqlMin . " $fifopost_order";
-			}
-		}
-		else
-		{
-			$sSqlMin = $sSqlMin . " order by rand()";
-		}
-		
-	}
-	
-	if( ! empty($fifopost_noofpost) )
-	{
-		$sSqlMin = $sSqlMin . " limit 0, $fifopost_noofpost";
-	}
-	
-	//echo $sSqlMin;
-	
-	$sSql = $wpdb->get_results($sSqlMin);	
+	$sSql = query_posts('cat='.$fifopost_categories.'&orderby='.$fifopost_orderbys.'&order='.$fifopost_order.'&showposts='.$fifopost_noofpost);
 	
 	if ( ! empty($sSql) ) 
 	{
@@ -185,9 +85,9 @@ function fifopost_shortcode( $atts )
 			$count = $count + 1;
 		}
 	}
+	wp_reset_query();
 	
 	@$fifo = "";
-	//$fifo = $fifo . "<script type='text/javascript' src='".fifo_plugin_url('fade-in-fade-out-post-title.js')."'><script>";
     $fifo = $fifo . "<script type='text/javascript' language='javascript'>function fifopost_SetFadeLinks() { $fifopost_arr;}";
 
 	$fifo = $fifo . 'var fifopost_FadeOut = '.$fifopost_fadeout.';';
@@ -255,7 +155,7 @@ function fifopost_widget_init()
 
 function fifopost_deactivation() 
 {
-
+	// No action required.
 }
 
 function fifopost_option() 
@@ -370,6 +270,7 @@ function fifopost_add_javascript_files()
 	}
 }  
 
+add_shortcode( 'FADEIN_FADEOUT', 'fifopost_shortcode' );
 add_action('wp_enqueue_scripts', 'fifopost_add_javascript_files');
 add_action('admin_menu', 'fifopost_add_to_menu');
 add_action("plugins_loaded", "fifopost_widget_init");

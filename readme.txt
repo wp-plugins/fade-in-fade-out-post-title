@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Tags: fade, fade in, fade out, plugin, widget
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 8.0
+Tested up to: 3.5
+Stable tag: 8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -69,10 +69,10 @@ Small short code bug fixed.
 
 = 4.0 =
 Reset Query issue has been fixed.
-Tested UpTo 3.3
+Tested up to 3.3
 
 = 5.0 =
-Tested upto 3.4
+Tested up to 3.4
 
 = 6.0 =
 Tested upto 3.4.1
@@ -80,7 +80,13 @@ JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook
 Slight changes in the short code implementation, but no need to change the short code.
 
 = 7.0 =
-New demo link, www.gopiplus.com
+New demo link, http://www.gopiplus.com
+
+= 8.0 =
+Tested up to 3.4.2
+
+= 8.1 =
+Tested up to 3.5
 
 == Upgrade Notice ==
 
@@ -92,13 +98,13 @@ Small short code bug fixed.
 
 = 4.0 =
 Reset Query issue has been fixed.
-Tested upto 3.3
+Tested up to 3.3
 
 = 5.0 =
-Tested upto 3.4
+Tested up to 3.4
 
 = 6.0 =
-Tested upto 3.4.1
+Tested up to 3.4.1
 JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook), This will avoid the JavaScript, Jquery conflict.
 Slight changes in the short code implementation, but no need to change the short code.
 
@@ -106,4 +112,7 @@ Slight changes in the short code implementation, but no need to change the short
 New demo link, www.gopiplus.com
 
 = 8.0 =
-Tested upto 3.4.2
+Tested up to 3.4.2
+
+= 8.1 =
+Tested up to 3.5
