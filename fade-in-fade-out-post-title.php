@@ -4,7 +4,7 @@
 Plugin Name: Fade in fade out post title
 Description: Fade in fade out post title, It is an excellent way to transition between two messages.
 Author: Gopi.R
-Version: 8.1
+Version: 9.0
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
@@ -161,7 +161,14 @@ function fifopost_deactivation()
 function fifopost_option() 
 {
 	global $wpdb;
-	echo '<h2>Fade in fade out post title</h2>';
+	?>
+<div class="wrap">
+  <div class="form-wrap">
+    <div id="icon-edit" class="icon32 icon32-posts-post"><br>
+    </div>
+	<h2>Fade in fade out post title</h2>
+	<h3>Plugin setting</h3>
+	<?php
 	
 	$fifopost_title = get_option('fifopost_title');
 	
@@ -180,6 +187,9 @@ function fifopost_option()
 	
 	if (@$_POST['fifopos_submit']) 
 	{
+		//	Just security thingy that wordpress offers us
+		check_admin_referer('fifopost_form_show');
+		
 		$fifopost_title = stripslashes($_POST['fifopost_title']);
 		
 		//$fifopost_fadeout = stripslashes($_POST['fifopost_fadeout']);
@@ -213,45 +223,57 @@ function fifopost_option()
 	
 	echo '<form name="fifopost_form" method="post" action="">';
 	
-	echo '<p>'.FIFO_TITLE.'<br><input  style="width: 250px;" type="text" value="';
-	echo $fifopost_title . '" name="fifopost_title" id="fifopost_title" /></p>';
+	echo '<label for="tag-title">'.FIFO_TITLE.'</label><input  style="width: 250px;" type="text" value="';
+	echo $fifopost_title . '" name="fifopost_title" id="fifopost_title" /><p></p>';
 	
 	//echo '<p>Fadeout:<br><input  style="width: 100px;" type="text" value="';
 	//echo $fifopost_fadeout . '" name="fifopost_fadeout" id="fifopost_fadeout" /></p>';
 	
-	echo '<p>'.FIFO_FADEIN.'<br><input  style="width: 100px;" type="text" value="';
-	echo $fifopost_fadein . '" name="fifopost_fadein" id="fifopost_fadein" /></p>';
+	echo '<label for="tag-title">'.FIFO_FADEIN.'</label><input  style="width: 100px;" type="text" value="';
+	echo $fifopost_fadein . '" name="fifopost_fadein" id="fifopost_fadein" /><p></p>';
 	
-	echo '<p>'.FIFO_FADE.'<br><input  style="width: 100px;" type="text" value="';
-	echo $fifopost_fade . '" name="fifopost_fade" id="fifopost_fade" /></p>';
+	echo '<label for="tag-title">'.FIFO_FADE.'</label><input  style="width: 100px;" type="text" value="';
+	echo $fifopost_fade . '" name="fifopost_fade" id="fifopost_fade" /><p></p>';
 	
-	echo '<p>'.FIFO_FADESTEP.'<br><input  style="width: 100px;" type="text" value="';
-	echo $fifopost_fadestep . '" name="fifopost_fadestep" id="fifopost_fadestep" /></p>';
+	echo '<label for="tag-title">'.FIFO_FADESTEP.'</label><input  style="width: 100px;" type="text" value="';
+	echo $fifopost_fadestep . '" name="fifopost_fadestep" id="fifopost_fadestep" /><p></p>';
 	
-	echo '<p>'.FIFO_FADEWAIT.'<br><input  style="width: 100px;" type="text" value="';
-	echo $fifopost_fadewait . '" name="fifopost_fadewait" id="fifopost_fadewait" /></p>';
+	echo '<label for="tag-title">'.FIFO_FADEWAIT.'</label><input  style="width: 100px;" type="text" value="';
+	echo $fifopost_fadewait . '" name="fifopost_fadewait" id="fifopost_fadewait" /><p></p>';
 	
 	//echo '<p>fifopost_bfadeoutt:<br><input  style="width: 200px;" type="text" value="';
 	//echo $fifopost_bfadeoutt . '" name="fifopost_bfadeoutt" id="fifopost_bfadeoutt" /></p>';
 	
-	echo '<p>'.FIFO_NUMBER_OF_POST.'<br><input  style="width: 200px;" type="text" value="';
-	echo $fifopost_noofpost . '" name="fifopost_noofpost" id="fifopost_noofpost" /></p>';
+	echo '<label for="tag-title">'.FIFO_NUMBER_OF_POST.'</label><input  style="width: 200px;" type="text" value="';
+	echo $fifopost_noofpost . '" name="fifopost_noofpost" id="fifopost_noofpost" /><p></p>';
 	
-	echo '<p>'.FIFO_POST_CATEGORIES.'<br><input  style="width: 200px;" type="text" value="';
-	echo $fifopost_categories . '" name="fifopost_categories" id="fifopost_categories" /> '.FIFO_POST_CATEGORIES_HELP.'</p>';
+	echo '<label for="tag-title">'.FIFO_POST_CATEGORIES.'</label><input  style="width: 200px;" type="text" value="';
+	echo $fifopost_categories . '" name="fifopost_categories" id="fifopost_categories" /><p>'.FIFO_POST_CATEGORIES_HELP.'</p>';
 	
-	echo '<p>'.FIFO_POST_ORDERBY.'<br><input  style="width: 200px;" type="text" value="';
-	echo $fifopost_orderbys . '" name="fifopost_orderbys" id="fifopost_orderbys" /> '.FIFO_POST_ORDERBY_HELP.'</p>';
+	echo '<label for="tag-title">'.FIFO_POST_ORDERBY.'</label><input  style="width: 200px;" type="text" value="';
+	echo $fifopost_orderbys . '" name="fifopost_orderbys" id="fifopost_orderbys" /><p>'.FIFO_POST_ORDERBY_HELP.'</p>';
 	
-	echo '<p>'.FIFO_POST_ORDER.'<br><input  style="width: 100px;" type="text" value="';
-	echo $fifopost_order . '" name="fifopost_order" id="fifopost_order" /> '.FIFO_POST_ORDER_HELP.' </p>';
+	echo '<label for="tag-title">'.FIFO_POST_ORDER.'</label><input  style="width: 100px;" type="text" value="';
+	echo $fifopost_order . '" name="fifopost_order" id="fifopost_order" /><p>'.FIFO_POST_ORDER_HELP.' </p>';
 	
-	echo '<p>'.FIFO_POST_PREFIX.'<br><input  style="width: 200px;" type="text" value="';
-	echo $fifopost_prefix . '" name="fifopost_prefix" id="fifopost_prefix" /></p>';
+	echo '<label for="tag-title">'.FIFO_POST_PREFIX.'</label><input  style="width: 200px;" type="text" value="';
+	echo $fifopost_prefix . '" name="fifopost_prefix" id="fifopost_prefix" /><p></p>';
 
-	echo '<input name="fifopos_submit" id="fifopos_submit" lang="publish" class="button-primary" value="'.FIFO_SUBMIT_BUTTON.'" type="Submit" />';
+	echo '<br/><input name="fifopos_submit" id="fifopos_submit" lang="publish" class="button-primary" value="'.FIFO_SUBMIT_BUTTON.'" type="Submit" />';
+	wp_nonce_field('fifopost_form_show');
 	echo '</form>';
-	require_once("help.php");
+	
+	?>
+	<h3>Plugin Configuration</h3>
+	<ul>
+		<li>Drag and drop the widget.</li>
+		<li>Add the plugin in the posts or pages using short code.</li>
+		<li>Add directly in to the theme using PHP code.</li>
+	</ul>
+    <p class="description">Check official website for more information <a href="http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/" target="_blank">Click here</a></p>
+  </div>
+</div>
+	<?php
 }
 
 function fifopost_add_to_menu() 
