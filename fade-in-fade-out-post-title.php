@@ -4,7 +4,7 @@
 Plugin Name: Fade in fade out post title
 Description: Fade in fade out post title, It is an excellent way to transition between two messages.
 Author: Gopi.R
-Version: 9.0
+Version: 9.1
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
@@ -33,6 +33,9 @@ function fifo_plugin_url( $path = '' ) {
 }
 
 require_once("language/english.php");
+//require_once("language/dutch.php");
+//require_once("language/french.php");
+//require_once("language/german.php");
 
 function fifo()
 {
@@ -74,20 +77,20 @@ function fifopost_shortcode( $atts )
 		$count = 0;
 		foreach ( $sSql as $sSql ) 
 		{
-			@$title = $sSql->post_title;
-			@$link = get_permalink($sSql->ID);
+			$title = $sSql->post_title;
+			$link = get_permalink($sSql->ID);
 			$fifopost_arr = $fifopost_arr . "fifopost_Links[$count] = '$link';fifopost_Titles[$count] = '$title'; ";
 			if($count == 0)
 			{
-				@$first_t = $title;
-				@$first_l = $link;
+				$first_t = $title;
+				$first_l = $link;
 			}
 			$count = $count + 1;
 		}
 	}
 	wp_reset_query();
 	
-	@$fifo = "";
+	$fifo = "";
     $fifo = $fifo . "<script type='text/javascript' language='javascript'>function fifopost_SetFadeLinks() { $fifopost_arr;}";
 
 	$fifo = $fifo . 'var fifopost_FadeOut = '.$fifopost_fadeout.';';
@@ -166,8 +169,8 @@ function fifopost_option()
   <div class="form-wrap">
     <div id="icon-edit" class="icon32 icon32-posts-post"><br>
     </div>
-	<h2>Fade in fade out post title</h2>
-	<h3>Plugin setting</h3>
+	<h2><?php echo FIFO_PLUGIN_TITLE; ?></h2>
+	<h3><?php echo FIFO_PLUGIN_SUBTITLE; ?></h3>
 	<?php
 	
 	$fifopost_title = get_option('fifopost_title');
@@ -264,13 +267,13 @@ function fifopost_option()
 	echo '</form>';
 	
 	?>
-	<h3>Plugin Configuration</h3>
-	<ul>
-		<li>Drag and drop the widget.</li>
-		<li>Add the plugin in the posts or pages using short code.</li>
-		<li>Add directly in to the theme using PHP code.</li>
-	</ul>
-    <p class="description">Check official website for more information <a href="http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/" target="_blank">Click here</a></p>
+	<h3><?php echo FIFO_PLUGIN_HELP_1; ?></h3>
+	<ol>
+		<li><?php echo FIFO_PLUGIN_HELP_2; ?></li>
+		<li><?php echo FIFO_PLUGIN_HELP_3; ?></li>
+		<li><?php echo FIFO_PLUGIN_HELP_4; ?></li>
+	</ol>
+    <p class="description"><?php echo FIFO_PLUGIN_HELP_5; ?> <a href="http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/" target="_blank">Click here</a></p>
   </div>
 </div>
 	<?php

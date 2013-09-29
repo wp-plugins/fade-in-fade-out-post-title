@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Tags: fade, fade in, fade out, plugin, widget
 Requires at least: 3.4
-Tested up to: 3.6
-Stable tag: 9.0
+Tested up to: 3.7
+Stable tag: 9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -92,6 +92,10 @@ Tested up to 3.5
 Tested up to 3.6
 Added some security feature.
 
+= 9.1 =
+Tested up to 3.7 beta1
+Option to switch plugin into 4 different language (english, dutch, french, german).  BETA try.
+
 == Upgrade Notice ==
 
 = 1.0 =				
@@ -124,3 +128,7 @@ Tested up to 3.5
 = 9.0 =
 Tested up to 3.6
 Added some security feature.
+
+= 9.1 =
+Tested up to 3.7 beta1
+Option to switch plugin into 4 different language (english, dutch, french, german).  BETA try.

@@ -14,4 +14,10 @@ if ( ! defined( 'FIFO_POST_ORDER' ) ) define( 'FIFO_POST_ORDER', "Post order : "
 if ( ! defined( 'FIFO_POST_ORDER_HELP' ) ) define( 'FIFO_POST_ORDER_HELP', "ASC/DESC" );
 if ( ! defined( 'FIFO_POST_PREFIX' ) ) define( 'FIFO_POST_PREFIX', "Prefix text : " );
 if ( ! defined( 'FIFO_SUBMIT_BUTTON' ) ) define( 'FIFO_SUBMIT_BUTTON', "Update Setting" );
+if ( ! defined( 'FIFO_PLUGIN_SUBTITLE' ) ) define( 'FIFO_PLUGIN_SUBTITLE', "Plugin setting" );
+if ( ! defined( 'FIFO_PLUGIN_HELP_1' ) ) define( 'FIFO_PLUGIN_HELP_1', "Plugin Configuration" );
+if ( ! defined( 'FIFO_PLUGIN_HELP_2' ) ) define( 'FIFO_PLUGIN_HELP_2', "Drag and drop the widget." );
+if ( ! defined( 'FIFO_PLUGIN_HELP_3' ) ) define( 'FIFO_PLUGIN_HELP_3', "Add the plugin in the posts or pages using short code." );
+if ( ! defined( 'FIFO_PLUGIN_HELP_4' ) ) define( 'FIFO_PLUGIN_HELP_4', "Add directly in to the theme using PHP code." );
+if ( ! defined( 'FIFO_PLUGIN_HELP_5' ) ) define( 'FIFO_PLUGIN_HELP_5', "Check official website for more information" );
 ?>
