@@ -4,7 +4,7 @@
 Plugin Name: Fade in fade out post title
 Description: Fade in fade out post title, It is an excellent way to transition between two messages.
 Author: Gopi.R
-Version: 9.1
+Version: 9.2
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
@@ -31,11 +31,6 @@ function fifo_plugin_path( $path = '' ) {
 function fifo_plugin_url( $path = '' ) {
 	return plugins_url( $path, FIFO_PLUGIN_BASENAME );
 }
-
-require_once("language/english.php");
-//require_once("language/dutch.php");
-//require_once("language/french.php");
-//require_once("language/german.php");
 
 function fifo()
 {
@@ -140,19 +135,19 @@ function fifopost_widget($args)
 	
 function fifopost_control() 
 {
-	echo FIFO_PLUGIN_TITLE;
+	 _e('Fade in fade out post title', 'fifoposttitle');
 }
 
 function fifopost_widget_init()
 {
 	if(function_exists('wp_register_sidebar_widget')) 
 	{
-		wp_register_sidebar_widget('fifopost', FIFO_PLUGIN_TITLE, 'fifopost_widget');
+		wp_register_sidebar_widget('fifopost', __('Fade in fade out post title', 'fifoposttitle'), 'fifopost_widget');
 	}
 	
 	if(function_exists('wp_register_widget_control')) 
 	{
-		wp_register_widget_control('fifopost', array(FIFO_PLUGIN_TITLE, 'widgets'), 'fifopost_control');
+		wp_register_widget_control('fifopost', array(__('Fade in fade out post title', 'fifoposttitle'), 'widgets'), 'fifopost_control');
 	} 
 }
 
@@ -169,8 +164,8 @@ function fifopost_option()
   <div class="form-wrap">
     <div id="icon-edit" class="icon32 icon32-posts-post"><br>
     </div>
-	<h2><?php echo FIFO_PLUGIN_TITLE; ?></h2>
-	<h3><?php echo FIFO_PLUGIN_SUBTITLE; ?></h3>
+	<h2><?php _e('Fade in fade out post title', 'fifoposttitle'); ?></h2>
+	<h3><?php _e('Plugin setting', 'fifoposttitle'); ?></h3>
 	<?php
 	
 	$fifopost_title = get_option('fifopost_title');
@@ -226,54 +221,57 @@ function fifopost_option()
 	
 	echo '<form name="fifopost_form" method="post" action="">';
 	
-	echo '<label for="tag-title">'.FIFO_TITLE.'</label><input  style="width: 250px;" type="text" value="';
+	echo '<label for="tag-title">'.__('Widget title :', 'fifoposttitle').'</label><input  style="width: 250px;" type="text" value="';
 	echo $fifopost_title . '" name="fifopost_title" id="fifopost_title" /><p></p>';
 	
 	//echo '<p>Fadeout:<br><input  style="width: 100px;" type="text" value="';
 	//echo $fifopost_fadeout . '" name="fifopost_fadeout" id="fifopost_fadeout" /></p>';
 	
-	echo '<label for="tag-title">'.FIFO_FADEIN.'</label><input  style="width: 100px;" type="text" value="';
+	echo '<label for="tag-title">'.__('Fade in :', 'fifoposttitle').'</label><input  style="width: 100px;" type="text" value="';
 	echo $fifopost_fadein . '" name="fifopost_fadein" id="fifopost_fadein" /><p></p>';
 	
-	echo '<label for="tag-title">'.FIFO_FADE.'</label><input  style="width: 100px;" type="text" value="';
+	echo '<label for="tag-title">'.__('Fade :', 'fifoposttitle').'</label><input  style="width: 100px;" type="text" value="';
 	echo $fifopost_fade . '" name="fifopost_fade" id="fifopost_fade" /><p></p>';
 	
-	echo '<label for="tag-title">'.FIFO_FADESTEP.'</label><input  style="width: 100px;" type="text" value="';
+	echo '<label for="tag-title">'.__('Fade out :', 'fifoposttitle').'</label><input  style="width: 100px;" type="text" value="';
 	echo $fifopost_fadestep . '" name="fifopost_fadestep" id="fifopost_fadestep" /><p></p>';
 	
-	echo '<label for="tag-title">'.FIFO_FADEWAIT.'</label><input  style="width: 100px;" type="text" value="';
+	echo '<label for="tag-title">'.__('Fade wait :', 'fifoposttitle').'</label><input  style="width: 100px;" type="text" value="';
 	echo $fifopost_fadewait . '" name="fifopost_fadewait" id="fifopost_fadewait" /><p></p>';
 	
 	//echo '<p>fifopost_bfadeoutt:<br><input  style="width: 200px;" type="text" value="';
 	//echo $fifopost_bfadeoutt . '" name="fifopost_bfadeoutt" id="fifopost_bfadeoutt" /></p>';
 	
-	echo '<label for="tag-title">'.FIFO_NUMBER_OF_POST.'</label><input  style="width: 200px;" type="text" value="';
+	echo '<label for="tag-title">'.__('Number of post :', 'fifoposttitle').'</label><input  style="width: 200px;" type="text" value="';
 	echo $fifopost_noofpost . '" name="fifopost_noofpost" id="fifopost_noofpost" /><p></p>';
 	
-	echo '<label for="tag-title">'.FIFO_POST_CATEGORIES.'</label><input  style="width: 200px;" type="text" value="';
-	echo $fifopost_categories . '" name="fifopost_categories" id="fifopost_categories" /><p>'.FIFO_POST_CATEGORIES_HELP.'</p>';
+	echo '<label for="tag-title">'.__('Post categories :', 'fifoposttitle').'</label><input  style="width: 200px;" type="text" value="';
+	echo $fifopost_categories . '" name="fifopost_categories" id="fifopost_categories" />';
+	echo '<p>'.__('(Example: 1, 3, 4) i.e Category IDs, separated by commas.', 'fifoposttitle').'</p>';
 	
-	echo '<label for="tag-title">'.FIFO_POST_ORDERBY.'</label><input  style="width: 200px;" type="text" value="';
-	echo $fifopost_orderbys . '" name="fifopost_orderbys" id="fifopost_orderbys" /><p>'.FIFO_POST_ORDERBY_HELP.'</p>';
+	echo '<label for="tag-title">'.__('Post orderbys :', 'fifoposttitle').'</label><input  style="width: 200px;" type="text" value="';
+	echo $fifopost_orderbys . '" name="fifopost_orderbys" id="fifopost_orderbys" />';
+	echo '<p>'.__('(Any 1 from the list). ID/author/title/rand/date/category/modified', 'fifoposttitle').'</p>';
 	
-	echo '<label for="tag-title">'.FIFO_POST_ORDER.'</label><input  style="width: 100px;" type="text" value="';
-	echo $fifopost_order . '" name="fifopost_order" id="fifopost_order" /><p>'.FIFO_POST_ORDER_HELP.' </p>';
+	echo '<label for="tag-title">'.__('Post order : ', 'fifoposttitle').'</label><input  style="width: 100px;" type="text" value="';
+	echo $fifopost_order . '" name="fifopost_order" id="fifopost_order" /><p>'.__('ASC/DESC', 'fifoposttitle').' </p>';
 	
-	echo '<label for="tag-title">'.FIFO_POST_PREFIX.'</label><input  style="width: 200px;" type="text" value="';
+	echo '<label for="tag-title">'.__('Prefix text : ', 'fifoposttitle').'</label><input  style="width: 200px;" type="text" value="';
 	echo $fifopost_prefix . '" name="fifopost_prefix" id="fifopost_prefix" /><p></p>';
 
-	echo '<br/><input name="fifopos_submit" id="fifopos_submit" lang="publish" class="button-primary" value="'.FIFO_SUBMIT_BUTTON.'" type="Submit" />';
+	echo '<br/><input name="fifopos_submit" id="fifopos_submit" lang="publish" class="button-primary" value="'.__('Update Setting', 'fifoposttitle').'" type="Submit" />';
 	wp_nonce_field('fifopost_form_show');
 	echo '</form>';
 	
 	?>
-	<h3><?php echo FIFO_PLUGIN_HELP_1; ?></h3>
+	<h3><?php _e('Plugin Configuration', 'fifoposttitle'); ?></h3>
 	<ol>
-		<li><?php echo FIFO_PLUGIN_HELP_2; ?></li>
-		<li><?php echo FIFO_PLUGIN_HELP_3; ?></li>
-		<li><?php echo FIFO_PLUGIN_HELP_4; ?></li>
+		<li><?php _e('Drag and drop the widget.', 'fifoposttitle'); ?></li>
+		<li><?php _e('Add the plugin in the posts or pages using short code.', 'fifoposttitle'); ?></li>
+		<li><?php _e('Add directly in to the theme using PHP code.', 'fifoposttitle'); ?></li>
 	</ol>
-    <p class="description"><?php echo FIFO_PLUGIN_HELP_5; ?> <a href="http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/" target="_blank">Click here</a></p>
+    <p class="description"><?php _e('Check official website for more information', 'fifoposttitle'); ?> 
+	<a href="http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/" target="_blank"><?php _e('Click here', 'fifoposttitle'); ?></a></p>
   </div>
 </div>
 	<?php
@@ -283,7 +281,8 @@ function fifopost_add_to_menu()
 {
 	if (is_admin()) 
 	{
-		add_options_page(FIFO_PLUGIN_TITLE, FIFO_PLUGIN_TITLE, 'manage_options', __FILE__, 'fifopost_option' );
+		add_options_page(__('Fade in fade out post title', 'fifoposttitle'), 
+				__('Fade in fade out post title', 'fifoposttitle'), 'manage_options', __FILE__, 'fifopost_option' );
 	}
 }
 
@@ -293,8 +292,14 @@ function fifopost_add_javascript_files()
 	{
 		wp_enqueue_script( 'fade-in-fade-out-post-title', fifo_plugin_url('fade-in-fade-out-post-title.js'));
 	}
-}  
+} 
 
+function fifopost_textdomain() 
+{
+	  load_plugin_textdomain( 'fifoposttitle', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action('plugins_loaded', 'fifopost_textdomain');
 add_shortcode( 'FADEIN_FADEOUT', 'fifopost_shortcode' );
 add_action('wp_enqueue_scripts', 'fifopost_add_javascript_files');
 add_action('admin_menu', 'fifopost_add_to_menu');
