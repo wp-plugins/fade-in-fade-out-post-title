@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fade in fade out post title\n"
-"POT-Creation-Date: 2014-01-01 22:59+0800\n"
-"PO-Revision-Date: 2014-01-01 22:59+0800\n"
+"POT-Creation-Date: 2014-04-18 20:55+0800\n"
+"PO-Revision-Date: 2014-04-18 20:55+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,95 +13,95 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../fade-in-fade-out-post-title.php:138
-#: ../fade-in-fade-out-post-title.php:145
-#: ../fade-in-fade-out-post-title.php:150
-#: ../fade-in-fade-out-post-title.php:167
-#: ../fade-in-fade-out-post-title.php:284
+#: ../fade-in-fade-out-post-title.php:139
+#: ../fade-in-fade-out-post-title.php:146
+#: ../fade-in-fade-out-post-title.php:151
+#: ../fade-in-fade-out-post-title.php:168
 #: ../fade-in-fade-out-post-title.php:285
+#: ../fade-in-fade-out-post-title.php:286
 msgid "Fade in fade out post title"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:168
+#: ../fade-in-fade-out-post-title.php:169
 msgid "Plugin setting"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:224
+#: ../fade-in-fade-out-post-title.php:225
 msgid "Widget title :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:230
+#: ../fade-in-fade-out-post-title.php:231
 msgid "Fade in :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:233
+#: ../fade-in-fade-out-post-title.php:234
 msgid "Fade :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:236
+#: ../fade-in-fade-out-post-title.php:237
 msgid "Fade out :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:239
+#: ../fade-in-fade-out-post-title.php:240
 msgid "Fade wait :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:245
+#: ../fade-in-fade-out-post-title.php:246
 msgid "Number of post :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:248
+#: ../fade-in-fade-out-post-title.php:249
 msgid "Post categories :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:250
+#: ../fade-in-fade-out-post-title.php:251
 msgid "(Example: 1, 3, 4) i.e Category IDs, separated by commas."
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:252
+#: ../fade-in-fade-out-post-title.php:253
 msgid "Post orderbys :"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:254
+#: ../fade-in-fade-out-post-title.php:255
 msgid "(Any 1 from the list). ID/author/title/rand/date/category/modified"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:256
+#: ../fade-in-fade-out-post-title.php:257
 msgid "Post order : "
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:257
+#: ../fade-in-fade-out-post-title.php:258
 msgid "ASC/DESC"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:259
+#: ../fade-in-fade-out-post-title.php:260
 msgid "Prefix text : "
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:262
+#: ../fade-in-fade-out-post-title.php:263
 msgid "Update Setting"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:267
+#: ../fade-in-fade-out-post-title.php:268
 msgid "Plugin Configuration"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:269
+#: ../fade-in-fade-out-post-title.php:270
 msgid "Drag and drop the widget."
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:270
+#: ../fade-in-fade-out-post-title.php:271
 msgid "Add the plugin in the posts or pages using short code."
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:271
+#: ../fade-in-fade-out-post-title.php:272
 msgid "Add directly in to the theme using PHP code."
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:273
+#: ../fade-in-fade-out-post-title.php:274
 msgid "Check official website for more information"
 msgstr ""
 
-#: ../fade-in-fade-out-post-title.php:274
+#: ../fade-in-fade-out-post-title.php:275
 msgid "Click here"
 msgstr ""
