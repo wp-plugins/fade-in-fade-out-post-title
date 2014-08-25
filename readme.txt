@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Tags: fade, fade in, fade out, plugin, widget
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 9.3
+Tested up to: 4.0
+Stable tag: 9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -40,20 +40,17 @@ Everyone loves fading in and fading out; it is an excellent way to transition be
 	
 == Installation ==
 
-**Installation Instruction & Configuration**  
-
 [See Installation Instruction and Configuration information and Demo](http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/)	   
 
 == Frequently Asked Questions ==
 
-**1. How to arrange the plugin fade-in setting?**	
+1. How to arrange the plugin fade-in setting?
 
-**2. Is possible to add the plugin more than one time in the same post or page?**
+2. Is possible to add the plugin more than one time in the same post or page?
 
-**3. How to change the fade-in text CSS?**	
+3. How to change the fade-in text CSS?	
 
 [Answer page](http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/)			
-[Contact](http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/)	
 
 == Screenshots ==
 
@@ -62,37 +59,47 @@ Everyone loves fading in and fading out; it is an excellent way to transition be
 == Changelog ==
 
 = 1.0 =			
+
 First version.
 
 = 2.0 =						
+
 Small short code bug fixed.
 
 = 4.0 =
+
 Reset Query issue has been fixed.
 Tested up to 3.3
 
 = 5.0 =
+
 Tested up to 3.4
 
 = 6.0 =
+
 Tested upto 3.4.1
 JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook), This will avoid the JavaScript, Jquery conflict.
 Slight changes in the short code implementation, but no need to change the short code.
 
 = 7.0 =
+
 New demo link, http://www.gopiplus.com
 
 = 8.0 =
+
 Tested up to 3.4.2
 
 = 8.1 =
+
 Tested up to 3.5
 
 = 9.0 =
+
 Tested up to 3.6
 Added some security feature.
 
 = 9.1 =
+
 Tested up to 3.7 beta1
 Option to switch plugin into 4 different language (english, dutch, french, german).  BETA try.
 
@@ -106,40 +113,54 @@ Plugin *.po file (fifoposttitle.po) available in the languages folder. Translato
 
 1. Tested up to 3.9
 
+= 9.4 =
+
+1. Tested up to 4.0
+
 == Upgrade Notice ==
 
 = 1.0 =				
+
 First version.
 
 = 2.0 =						
+
 Small short code bug fixed.
 
 = 4.0 =
+
 Reset Query issue has been fixed.
 Tested up to 3.3
 
 = 5.0 =
+
 Tested up to 3.4
 
 = 6.0 =
+
 Tested up to 3.4.1
 JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook), This will avoid the JavaScript, Jquery conflict.
 Slight changes in the short code implementation, but no need to change the short code.
 
 = 7.0 =
+
 New demo link, www.gopiplus.com
 
 = 8.0 =
+
 Tested up to 3.4.2
 
 = 8.1 =
+
 Tested up to 3.5
 
 = 9.0 =
+
 Tested up to 3.6
 Added some security feature.
 
 = 9.1 =
+
 Tested up to 3.7 beta1
 Option to switch plugin into 4 different language (english, dutch, french, german).  BETA try.
 
@@ -152,3 +173,7 @@ Plugin *.po file (fifoposttitle.po) available in the languages folder. Translato
 = 9.3 =
 
 1. Tested up to 3.9
+
+= 9.4 =
+
+1. Tested up to 4.0
