@@ -3,7 +3,7 @@
 Plugin Name: Fade in fade out post title
 Description: Fade in fade out post title, It is an excellent way to transition between two messages.
 Author: Gopi Ramasamy
-Version: 9.4
+Version: 9.5
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/

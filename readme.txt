@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-
 Plugin URI: http://www.gopiplus.com/work/2011/07/31/fade-in-fade-out-post-title-wordpress-plugin/
 Tags: fade, fade in, fade out, plugin, widget
 Requires at least: 3.4
-Tested up to: 4.0
-Stable tag: 9.4
+Tested up to: 4.1
+Stable tag: 9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -117,6 +117,10 @@ Plugin *.po file (fifoposttitle.po) available in the languages folder. Translato
 
 1. Tested up to 4.0
 
+= 9.5 =
+
+1. Tested up to 4.1
+
 == Upgrade Notice ==
 
 = 1.0 =				
@@ -177,3 +181,7 @@ Plugin *.po file (fifoposttitle.po) available in the languages folder. Translato
 = 9.4 =
 
 1. Tested up to 4.0
+
+= 9.5 =
+
+1. Tested up to 4.1
